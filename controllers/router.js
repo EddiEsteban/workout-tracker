@@ -45,7 +45,7 @@ function router(app){
         console.log('my PUT /api/workouts/:id, body: ', req.body)
         try{
             const workoutId = req.params.id
-            const updateResult = await db.Workout.updateOne({_id:workoutId}, {$push: {exercises: [req.body]}})
+            const updateResult = await db.Workout.updateOne({_id:workoutId}, {$push: {exercises: [req.body]}, $inc: {totalDuration: req.body.duration}})
             res.status(200).send(updateResult)
         }catch(err){
             console.log('failed')

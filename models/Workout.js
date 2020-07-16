@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({ // maps to a collection, describes the shape of its documents
     day: {type: Date, default: Date.now},
+    totalDuration: {type: Number, min: 0},
     exercises: [{ // maps to a collection, describes the shape of its documents
         type: { type: String, trim: true, required: "type required" },
         name: { type: String, trim: true, required: "name required" },
