@@ -35,7 +35,7 @@ npm start
 ```
 Set your workout through the buttons and fields available.
 
-![demo](./github/README.md)
+![demo](./github/demo.gif)
 
 <a id='toc-license'></a>
 ## License
