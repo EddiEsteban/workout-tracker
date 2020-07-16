@@ -1,8 +1,8 @@
 const db = require("../models")
-
+const path = require('path')
 // (async()=>{let thing = await db.Workout.find({}); console.log(thing)})()
 
-
+const public = path.join(__dirname, "../public")
 
 // getLastWorkout()
 function router(app){
@@ -12,12 +12,12 @@ function router(app){
     })
     
     app.get('/exercise', async (req, res)=>{
-        let id = req.query.id
-        try{
-            let exercise = await db.Workout.find({_id: id})
-            res.sendFile('./exercise.html', { root: public })
-        }catch(err){res.status(400).send(err)}
-        // res.sendFile('./exercise.html', { root: public })
+        // let id = req.query.id
+        // try{
+        //     let exercise = await db.Workout.find({_id: id})
+        //     res.sendFile('./exercise.html', { root: public })
+        // }catch(err){res.status(400).send(err)}
+        res.sendFile('./exercise.html', { root: public })
     })
 
 
